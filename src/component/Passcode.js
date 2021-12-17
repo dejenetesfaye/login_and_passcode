@@ -48,12 +48,18 @@ const Passcode = () => {
     
       return (
         <div className='main-contains' style={{position: 'center'}}>
+          
              <div
           className='backgroundImage'
           style={{
             backgroundImage: 'url(/background.png)',
           }}
-        ></div>
+        ></div><div class="lds-spinner"  style={{
+          marginTop: '-200px',
+        }}
+        >
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          
       <header className='header'>
         <Navbar
           bg='dark'
@@ -71,9 +77,11 @@ const Passcode = () => {
           </Nav>
         </Navbar>
       </header>
+      
       <div className='App' style={{ textAlign: 'center', marginTop: '0px' }}>
         <div className='backgroundImages'>
-          <Container fluid className='App' style={{ height: '100%', marginTop: '0px', }}>
+         
+          <Container fluid className='App11' style={{ height: '100%', marginTop: '0px', }}>
             <Row>
               <Col lg={12} sm={12} style={{ marginTop: '50px' }}>
                 <div>
@@ -110,7 +118,6 @@ const Passcode = () => {
 
                     <input
                       style={{
-                        backgroundColor: '#F0F2F5',
                         fontSize: '18px',
                         height: '40px',
                         backgroundColor:'white',
@@ -213,7 +220,7 @@ const Passcode = () => {
               </Col>
             </Row>
           </Container>
-          <Container
+          {/* <Container
             style={{
               marginTop: '120px',
             }}
@@ -247,7 +254,7 @@ const Passcode = () => {
                 reserved.
               </a>
             </Col>
-          </Container>
+          </Container> */}
         </div>
       </div>
 <div style={{justifyContent: 'center',

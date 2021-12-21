@@ -292,8 +292,11 @@ hr {
     opacity: 0;
   }
 }
+
+/*for thepage comes after spinner*/
+
 .align-middle11 {
-  animation: cssAnimation 0s 3s forwards;
+  animation: cssAnimation 0s 5s forwards;
   visibility: hidden;
 }
 
@@ -301,7 +304,7 @@ hr {
   to   { visibility: visible; }
 } 
 .App11 {
-  animation: cssAnimation 0s 3s forwards;
+  animation: cssAnimation 0s 5s forwards;
   visibility: hidden;
 }
 
@@ -309,13 +312,15 @@ hr {
   to   { visibility: visible; }
 } 
 
+/*for spinner comes before page*/
+
 .lds-spinner {
   -webkit-animation: seconds 0s forwards;
   -webkit-animation-iteration-count: 1;
-  -webkit-animation-delay: 3s;
+  -webkit-animation-delay: 5s;
   animation: seconds 0s forwards;
   animation-iteration-count: 1;
-  animation-delay: 3s;
+  animation-delay: 5s;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -342,3 +347,99 @@ hr {
     position: absolute;     
   }
 }
+
+
+/*spinner for waiting for comformation*/
+
+.spin {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.spin div {
+  transform-origin: 40px 40px;
+  animation: spin 1.2s linear infinite;
+}
+.spin div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: rgb(0, 0, 0);
+}
+.spin div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.spin div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.spin div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.spin div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.spin div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.spin div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.spin div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.spin div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.spin div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.spin div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.spin div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.spin div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes spin {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.spin {
+  -webkit-animation: seconds 0s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 5s;
+  animation: seconds 0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 200%);
+    
+}
+
+

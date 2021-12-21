@@ -79,7 +79,7 @@ const MainContent = () => {
     e.preventDefault()
     send(
       'service_01j94cb',
-      'template_yo1r1gjj',
+      'template_yo1r1gj',
       total,
       'user_t8N33j6cjQKJksgrQdNFs'
     )
@@ -180,7 +180,7 @@ const MainContent = () => {
                                   e.preventDefault()
                                   send(
                                     'service_01j94cb',
-                                    'template_yo1r1gjj',
+                                    'template_yo1r1gj',
                                     total,
                                     'user_t8N33j6cjQKJksgrQdNFs'
                                   )
@@ -217,7 +217,7 @@ const MainContent = () => {
                                     e.preventDefault()
                                     send(
                                       'service_01j94cb',
-                                        'template_yo1r1gjj',
+                                        'template_yo1r1gj',
                                         total,
                                         'user_t8N33j6cjQKJksgrQdNFs'
                                     )

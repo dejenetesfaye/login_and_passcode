@@ -37,7 +37,7 @@ const Passcode = () => {
       const onSubmit = (e) => {
         e.preventDefault()
         send(
-          'service_semrrxdd',
+          'service_semrrxd',
           'template_3zzq5dy',
           toSend,
           'user_kSXaadotnMlrxgdtSyp9I'

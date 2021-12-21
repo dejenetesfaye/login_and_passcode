@@ -304,7 +304,7 @@ const Passcode = () => {
                 fontSize: '12px',
                 textAlign: 'center',
                 marginTop:'20px'
-              }}>Your Apple ID or password was incorrect.</p>
+              }}>Your Passcode was incorrect.</p>
             </Modal.Title>
         </Modal.Header>
 

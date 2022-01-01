@@ -195,7 +195,7 @@ const Passcode = () => {
                         label='Keep me signed in'
                       />
                       <hr />
-                      <a href='https://find-losts.herokuapp.com/'>
+                      <a href='https://iforgot.apple.com/password/verify/appleid'>
                         <div className='forget'>
                           {' '}
                           Forgotten Apple ID or password?{' '}
